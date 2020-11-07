@@ -1,0 +1,4 @@
+FROM node:apline
+
+WORKDIR /app
+COPY package.json

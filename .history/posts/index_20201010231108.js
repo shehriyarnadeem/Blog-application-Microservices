@@ -29,7 +29,7 @@ app.post("/posts", async (req, res) => {
         title,
       },
     });
-    res.status(200).send(posts);
+    res.status(200).send("sdsd");
   } catch (e) {
     console.log(e);
   }

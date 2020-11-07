@@ -37,8 +37,7 @@ app.post("/posts/:id/comments", async (req, res) => {
 app.post("/events", async (req, res) => {
   const { type, data } = req.body;
   const { status, content, postId, id } = data;
-  console.log(`event received on comment type, ${type}`)
-  console.log(`event received on comment data, ${data}`)
+  console.log(`event received on comment ${data}`)
   if (type === "CommentModerated") {
     console.log("Received CommentModerated on comments");
     const comments = commentsByPostId[postId];

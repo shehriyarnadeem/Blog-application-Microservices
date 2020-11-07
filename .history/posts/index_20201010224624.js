@@ -13,26 +13,26 @@ app.get("/posts", (req, res) => {
 
 app.post("/posts", async (req, res) => {
   console.log("over here man right here");
-  const id = randomBytes(4).toString("hex");
-  const { title } = req.body;
+  // const id = randomBytes(4).toString("hex");
+  // const { title } = req.body;
 
-  posts[id] = {
-    id,
-    title,
-  };
+  // posts[id] = {
+  //   id,
+  //   title,
+  // };
 
-  try {
-    await axios.post("http://event-srv:4005/events", {
-      type: "PostCreated",
-      data: {
-        id,
-        title,
-      },
-    });
-    res.status(200).send(posts);
-  } catch (e) {
-    console.log(e);
-  }
+  // try {
+  //   await axios.post("http://event-srv:4005/events", {
+  //     type: "PostCreated",
+  //     data: {
+  //       id,
+  //       title,
+  //     },
+  //   });
+  res.status(200).send("sdsd");
+  // } catch (e) {
+  //   console.log(e);
+  // }
 });
 
 app.post("/events", (req, res) => {

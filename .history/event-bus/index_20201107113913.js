@@ -7,9 +7,8 @@ app.use(bodyParser.json());
 const events = [];
 
 app.post("/events", async (req, res) => {
-
+  console.log("over here");
   const event = req.body;
-  console.log(`over here ${event}`);
   events.push(event);
   try {
     await axios.post("http://posts-clusterip-srv:4000/events", event);
